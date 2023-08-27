@@ -13,7 +13,7 @@ def get_search_results(vfx, appid=440, count=50):
         'search_descriptions': 1,
         'category_440_Quality[]': 'tag_rarity4',
     }
-    return market_search(params)
+    return market_search(params) or [] 
 
 
 def fetch_previous_data(file_path):
@@ -29,7 +29,7 @@ def detect_market_changes(current_df, previous_df):
 
 def main():
     for vfx_key, vfx_values in VFX_DICT.items():
-        vfx_results_list = [get_search_results(vfx) for vfx in vfx_values if get_search_results(vfx)]
+        vfx_results_list = [result for vfx in vfx_values for result in get_search_results(vfx)]
         
         current_df = pd.DataFrame(vfx_results_list)
         file_path = os.path.join("data", f"{vfx_key}_df.csv")
