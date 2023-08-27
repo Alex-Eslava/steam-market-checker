@@ -19,13 +19,13 @@ def query_steam_market(params):
     # Convert the response text to JSON
     return json.loads(response.text)
 
-def parse_market_results_html(results_html):
+def parse_market_results_html(results_html, params):
     soup = BeautifulSoup(results_html, 'html.parser')
     # Find all listing links, which will contain the desired data
     listings = soup.find_all('a', class_='market_listing_row_link')
     parsed_data = []
     for listing in listings:
-        data = {}
+        data = {'unusual_effect':params['query']}
         # Extracting the item name
         item_name_element = listing.find('span', class_='market_listing_item_name')
         if item_name_element:
@@ -54,5 +54,4 @@ def parse_market_results_html(results_html):
 
 def market_search(params):
     results = query_steam_market(params)
-    search_results = parse_market_results_html(results['results_html'])
-    return search_results
+    return parse_market_results_html(results['results_html'], params) if results else None
