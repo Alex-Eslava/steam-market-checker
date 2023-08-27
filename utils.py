@@ -58,12 +58,10 @@ def market_search(params, max_retries=5, delay=60):
         results = query_steam_market(params)
         
         if results:
-            return parse_market_results_html(results['results_html'], params)
+            return parse_market_results_html(results['results_html'], params) or []
         
         if results is None:  # Assuming `None` indicates a 429 error; adjust as needed.
             print(f"Warning: Attempt {i+1} of {max_retries}. Encountered HTTP 429. Retrying in {delay} seconds...")
             time.sleep(delay)
-        else:
-            return None
     print(f"Error: Exceeded {max_retries} attempts. Skipping...")
-    return None
+    return []  # Return an empty list instead of None
