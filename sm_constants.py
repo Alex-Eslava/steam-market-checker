@@ -12,12 +12,12 @@ VFX_DICT = {
     "SFX": ['galactic gateway', 'the eldritch opening', 'the dark doorway', 'ring of fire',
             'vicious circle', 'white lightning'],
 
-    "SFVII": ['eldritch flame', 'ancient eldritch', 'death by disco'],
+    "SFVII": ['eldritch flame', 'ancient eldritch', '"death by disco"'],
 
     "BONZO": ['"bonzo the all-gnawing"', 'amaranthine', 'stare from beyond', 'the ooze',
               'ghastly ghosts jr', 'haunted phantasm jr'],
 
-    "ARCANA": ['arcana', 'spellbound', 'chiroptera venenata', 'poisoned shadows',
+    "ARCANA": ['arcana', '"Unusual Effect: Spellbound"', 'chiroptera venenata', 'poisoned shadows',
                'something burning this way comes', 'hellfire', 'darkblaze', 'demonflame'],
 
     "MOONS": ['knifestorm', 'misty skull', 'harvest moon', "it's a secret to everybody", 'stormy 13th hour'],

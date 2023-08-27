@@ -24,7 +24,13 @@ def fetch_previous_data(file_path):
 
 
 def detect_market_changes(current_df, previous_df):
-    return pd.concat([current_df, previous_df]).drop_duplicates(keep=False)
+    # Merge based on the specific columns
+    merged_df = current_df.merge(previous_df, on=['unusual_effect', 'item_name', 'sale_price'], indicator=True, how='outer')
+    # Filter to only get rows present in `current_df` but not in `previous_df`
+    new_entries = merged_df[merged_df['_merge'] == 'left_only']
+    # Drop the _merge column before returning
+    return new_entries.drop(columns=['_merge'])
+
 
 
 def main():
