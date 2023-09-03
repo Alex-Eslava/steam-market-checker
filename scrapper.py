@@ -29,8 +29,8 @@ def detect_market_changes(current_df, previous_df):
     if previous_df is None or previous_df.empty:
         return current_df
     # We noticed small FX change differences on a daily basis so we will ignore +-1.99 usd differences
-    current_df["truncated_price"] = current_df["sale_price_text"].str[:-4]
-    previous_df["truncated_price"] = previous_df["sale_price_text"].str[:-4]
+    current_df["truncated_price"] = current_df["sell_price_text"].str[:-4]
+    previous_df["truncated_price"] = previous_df["sell_price_text"].str[:-4]
     filtered_df = current_df[
         ~current_df.set_index(["name", "truncated_price"]).index.isin(
             previous_df.set_index(["name", "truncated_price"]).index
