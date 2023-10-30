@@ -60,6 +60,13 @@ VFX_DICT = {
         "cauldron bubbles",
         "eerie orbiting fire",
     ],
+    "NSTORMS": [
+        "Acidic Climate",
+        "Otherworldly Weather",
+        "Nightmarish Storm",
+        "Celestial Summit",
+        "Stellar Ascent",
+    ],
     "TAUNT": ["ominous night", "spooky night", "charged arcane"],
 }
 
