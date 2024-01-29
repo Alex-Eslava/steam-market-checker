@@ -62,12 +62,8 @@ VFX_DICT = {
     ],
     "NSTORMS": [
         "Acidic Climate",
-        "Otherworldly Weather",
-        "Nightmarish Storm",
-        "Celestial Summit",
-        "Stellar Ascent",
     ],
-    "TAUNT": ["ominous night", "spooky night", "charged arcane"],
+    "TAUNT": ["ominous night", "Eldritch Rift", "Dark Twilight", "Galactic Connection"],
 }
 
 UNUS_COLS = ["unusual_effect", "name", "sell_price_text"]
